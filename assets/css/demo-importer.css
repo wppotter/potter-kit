@@ -15,6 +15,9 @@
 .appearance_page_demo-importer .demo-importer .wp-filter {
   padding: 0 20px 0px 0px;
   border-radius: 3px;
+  position: sticky;
+  top: 32px;
+  z-index: 9;
 }
 
 .appearance_page_demo-importer .demo-importer .wp-filter .search-form {
@@ -282,14 +285,22 @@ img.tips {
 }
 
 .demo-import-confirm-message ol .warning {
-  color: #f00000
+  color: #f00000;
+  padding: 10px;
+  background: #FFDDE1;
 }
 
 .jconfirm-buttons .demo-import-confirm-button {
-  background: #f00000;
-  color: #fff
+  background: #50E3C2;
+  color: #fff;
 }
-
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons, .jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons {
+  float: none;
+  padding-bottom: 0px;
+}
+.plugins-list-table {
+  border: 0px !important;
+}
 .jconfirm-buttons .demo-import-cancel-button {
   background: #eee;
   border-color: #999;
@@ -302,7 +313,7 @@ body.demo-import-message-popup {
 }
 
 .admin-heading-content {
-  padding: 20px 0px 20px 0px;
+  padding: 00px 0px 20px 0px;
 }
 .admin-heading-content h1 {
   font-weight: 200;
@@ -330,4 +341,12 @@ body.demo-import-message-popup {
 .updated.potter-kit-message p {
   font-size: 16px;
   font-weight: 300;
+}
+.jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
+  max-width: 30%;
+  padding: 40px;
+  font-weight: 300;
+}
+.wrap.demo-importer {
+  margin-top: 0px;
 }

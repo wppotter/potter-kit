@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 
 #: inc/admin/views/html-notice-reset-wizard.php:13
-msgid "Run the Reset Wizard"
+msgid "Reset WordPress Now"
 msgstr ""
 
 #: inc/admin/views/html-notice-reset-wizard.php:13
