@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 This program incorporates work covered by the following copyright and
 permission notices:
 
-  Potter Kit - Demo Importer for WordPress
+  Potter Kit - Elementor, Beaver Builder, Gutenberg Templates for WordPress
 
   Potter Kit is Copyright (c) 2016 Potter Kit
 

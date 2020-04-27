@@ -227,7 +227,7 @@ final class Potter_Kit {
 	 */
 	public function plugin_action_links( $actions ) {
 		$new_actions = array(
-			'importer' => '<a href="' . admin_url( 'themes.php?page=demo-importer' ) . '" aria-label="' . esc_attr( __( 'View Demo Importer', 'potter-kit' ) ) . '">' . __( 'Demo Importer', 'potter-kit' ) . '</a>',
+			'importer' => '<a href="' . admin_url( 'themes.php?page=demo-importer' ) . '" aria-label="' . esc_attr( __( 'View Demo Importer', 'potter-kit' ) ) . '">' . __( 'Demo Sites', 'potter-kit' ) . '</a>',
 		);
 
 		return array_merge( $new_actions, $actions );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Potter Kit - Demo Importer for Potter Theme
+ * Plugin Name: Potter Kit - Elementor, Beaver Builder, Gutenberg Templates
  * Plugin URI: https://wppotter.com/potter-kit/
  * Description: Import Potter themes demo content, widgets and theme settings with just one click.
  * Version: 1.0.4

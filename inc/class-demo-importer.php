@@ -133,7 +133,7 @@ class PK_Demo_Sites {
 			// Add menu classes if user has access.
 			if ( apply_filters( 'potter_kit_importer_include_class_in_menu', true ) ) {
 				foreach ( $submenu['themes.php'] as $order => $menu_item ) {
-					if ( 0 === strpos( $menu_item[0], _x( 'Demo Importer', 'Admin menu name', 'potter-kit' ) ) ) {
+					if ( 0 === strpos( $menu_item[0], _x( 'Demo Sites', 'Admin menu name', 'potter-kit' ) ) ) {
 						$submenu['themes.php'][ $order ][4] = empty( $menu_item[4] ) ? $submenu_class : $menu_item[4] . ' ' . $submenu_class;
 						break;
 					}
