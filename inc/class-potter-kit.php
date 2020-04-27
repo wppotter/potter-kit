@@ -169,7 +169,7 @@ final class Potter_Kit {
 		}
 
 		// Redirect to demo importer page.
-		set_transient( '_tg_demo_importer_activation_redirect', 1, 30 );
+		set_transient( '_pk_demo_importer_activation_redirect', 1, 30 );
 	}
 
 	/**
@@ -179,7 +179,7 @@ final class Potter_Kit {
 
 		include_once dirname( __FILE__ ) . '/class-demo-importer-deactivator.php';
 
-		TG_Demo_Importer_Deactivator::deactivate();
+		PK_Demo_Sites_Deactivator::deactivate();
 
 	}
 

@@ -15,6 +15,7 @@ Import <a href="https://pottertheme.com" target="_blank" rel="nofollow">Potter T
 
 Get [free support](https://pottertheme.com/support/)
 
+The plugin is a modified version of [One Click Demo Importer](https://wordpress.org/plugins/one-click-demo-import/).
 
 = Requirements =
 

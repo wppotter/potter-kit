@@ -1,6 +1,6 @@
 <?php
 /**
- * Upgrade API: TG_Demo_Pack_Upgrader class
+ * Upgrade API: PK_Demo_Pack_Upgrader class
  *
  * Core class used for upgrading/installing demo packs.
  *
@@ -11,7 +11,7 @@
  * @see WP_Upgrader
  * @package Potter_Kit\Class
  */
-class TG_Demo_Pack_Upgrader extends WP_Upgrader {
+class PK_Demo_Pack_Upgrader extends WP_Upgrader {
 
 	/**
 	 * Result of the demo pack upgrade.
@@ -95,7 +95,7 @@ class TG_Demo_Pack_Upgrader extends WP_Upgrader {
 	 * Check a source package to be sure it contains a demo.
 	 *
 	 * Hooked to the {@see 'upgrader_source_selection'} filter by
-	 * TG_Demo_Upgrader::install().
+	 * PK_Demo_Upgrader::install().
 	 *
 	 * @global WP_Filesystem_Base $wp_filesystem Subclass
 	 *

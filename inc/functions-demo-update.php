@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.3.4
  */
-function tg_update_demo_importer_options() {
+function pk_update_demo_importer_options() {
 	$migrate_options = array(
 		'potter_kit_imported_id'             => 'potter_kit_importer_activated_id',
 		'potter_kit_imported_notice_dismiss' => 'potter_kit_importer_reset_notice',
@@ -30,4 +30,4 @@ function tg_update_demo_importer_options() {
 		}
 	}
 }
-add_action( 'admin_init', 'tg_update_demo_importer_options' );
+add_action( 'admin_init', 'pk_update_demo_importer_options' );

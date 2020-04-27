@@ -82,9 +82,33 @@
   border-bottom-color: transparent
 }
 
+.theme-browser .theme {
+  transition: .5s;
+}
+.theme-browser .theme:hover {
+  transform: translateX(3px);
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+
+}
 .appearance_page_demo-importer .demo-importer .theme-browser .theme .theme-screenshot img {
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+
+}
+.install-screenshot {
+  max-height: 300px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin: 20px 0px;
+}
+.install-screenshot img {
+  border: none !important;
+  margin: 0px 0px !important;
+}
+
+.appearance_page_demo-importer .demo-importer .theme-browser .theme .theme-screenshot:hover img {
+  opacity: 1;
 }
 
 .appearance_page_demo-importer .demo-importer .theme-install-overlay .wp-full-overlay-header {

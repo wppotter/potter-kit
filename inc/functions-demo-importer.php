@@ -20,7 +20,7 @@ require_once WPPK_ABSPATH . 'inc/functions-demo-update.php';
  *
  * @global WP_Filesystem_Base $wp_filesystem Subclass
  */
-function tg_ajax_install_required_plugin() {
+function pk_ajax_install_required_plugin() {
 	check_ajax_referer( 'updates' );
 
 	if ( empty( $_POST['plugin'] ) || empty( $_POST['slug'] ) ) {
@@ -131,7 +131,7 @@ function tg_ajax_install_required_plugin() {
 
 	wp_send_json_success( $status );
 }
-add_action( 'wp_ajax_install-required-plugin', 'tg_ajax_install_required_plugin', 1 );
+add_action( 'wp_ajax_install-required-plugin', 'pk_ajax_install_required_plugin', 1 );
 
 /**
  * Get an attachment ID from the filename.
@@ -139,7 +139,7 @@ add_action( 'wp_ajax_install-required-plugin', 'tg_ajax_install_required_plugin'
  * @param  string $filename
  * @return int Attachment ID on success, 0 on failure
  */
-function tg_get_attachment_id( $filename ) {
+function pk_get_attachment_id( $filename ) {
 	$attachment_id = 0;
 
 	$file = basename( $filename );
@@ -181,20 +181,20 @@ function tg_get_attachment_id( $filename ) {
 /**
  * Clear data before demo import AJAX action.
  *
- * @see tg_reset_widgets()
- * @see tg_delete_nav_menus()
- * @see tg_remove_theme_mods()
+ * @see pk_reset_widgets()
+ * @see pk_delete_nav_menus()
+ * @see pk_remove_theme_mods()
  */
 if ( apply_filters( 'wppotter_clear_data_before_demo_import', true ) ) {
-	add_action( 'wppotter_ajax_before_demo_import', 'tg_reset_widgets', 10 );
-	add_action( 'wppotter_ajax_before_demo_import', 'tg_delete_nav_menus', 20 );
-	add_action( 'wppotter_ajax_before_demo_import', 'tg_remove_theme_mods', 30 );
+	add_action( 'wppotter_ajax_before_demo_import', 'pk_reset_widgets', 10 );
+	add_action( 'wppotter_ajax_before_demo_import', 'pk_delete_nav_menus', 20 );
+	add_action( 'wppotter_ajax_before_demo_import', 'pk_remove_theme_mods', 30 );
 }
 
 /**
  * Reset existing active widgets.
  */
-function tg_reset_widgets() {
+function pk_reset_widgets() {
 	$sidebars_widgets = wp_get_sidebars_widgets();
 
 	// Reset active widgets.
@@ -208,7 +208,7 @@ function tg_reset_widgets() {
 /**
  * Delete existing navigation menus.
  */
-function tg_delete_nav_menus() {
+function pk_delete_nav_menus() {
 	$nav_menus = wp_get_nav_menus();
 
 	// Delete navigation menus.
@@ -222,17 +222,17 @@ function tg_delete_nav_menus() {
 /**
  * Remove theme modifications option.
  */
-function tg_remove_theme_mods() {
+function pk_remove_theme_mods() {
 	remove_theme_mods();
 }
 
 /**
  * After demo imported AJAX action.
  *
- * @see tg_set_wc_pages()
+ * @see pk_set_wc_pages()
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	add_action( 'wppotter_ajax_demo_imported', 'tg_set_wc_pages' );
+	add_action( 'wppotter_ajax_demo_imported', 'pk_set_wc_pages' );
 }
 
 /**
@@ -245,7 +245,7 @@ if ( class_exists( 'WooCommerce' ) ) {
  *
  * @param string $demo_id
  */
-function tg_set_wc_pages( $demo_id ) {
+function pk_set_wc_pages( $demo_id ) {
 	global $wpdb;
 
 	$wc_pages = apply_filters(
@@ -335,7 +335,7 @@ function tg_set_wc_pages( $demo_id ) {
  *
  * @since 1.4.0
  */
-function tg_print_admin_notice_templates() {
+function pk_print_admin_notice_templates() {
 	?>
 	<script id="tmpl-wp-installs-admin-notice" type="text/html">
 		<div <# if ( data.id ) { #>id="{{ data.id }}"<# } #> class="notice {{ data.className }}"><p>{{{ data.message }}}</p></div>

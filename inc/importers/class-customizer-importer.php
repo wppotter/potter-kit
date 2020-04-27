@@ -11,9 +11,9 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * TG_Customizer_Importer Class.
+ * PK_Customizer_Importer Class.
  */
-class TG_Customizer_Importer {
+class PK_Customizer_Importer {
 
 	/**
 	 * Imports uploaded mods and calls WordPress core customize_save actions so

@@ -11,9 +11,9 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * TG_Widget_Importer Class.
+ * PK_Widget_Importer Class.
  */
-class TG_Widget_Importer {
+class PK_Widget_Importer {
 
 	/**
 	 * Import widget JSON data.

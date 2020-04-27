@@ -9,9 +9,9 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * TG_Demo_Importer Class.
+ * PK_Demo_Sites Class.
  */
-class TG_Demo_Importer {
+class PK_Demo_Sites {
 
 	/**
 	 * Demo packages.
@@ -118,7 +118,7 @@ class TG_Demo_Importer {
 	 * Add menu item.
 	 */
 	public function admin_menu() {
-		add_theme_page( __( 'Demo Importer', 'potter-kit' ), __( 'Demo Importer', 'potter-kit' ), 'switch_themes', 'demo-importer', array( $this, 'demo_importer' ) );
+		add_theme_page( __( 'Demo Sites', 'potter-kit' ), __( 'Demo Sites', 'potter-kit' ), 'switch_themes', 'demo-importer', array( $this, 'demo_importer' ) );
 	}
 
 	/**
@@ -598,7 +598,7 @@ class TG_Demo_Importer {
 	/**
 	 * Ajax handler for importing a demo.
 	 *
-	 * @see TG_Demo_Upgrader
+	 * @see PK_Demo_Upgrader
 	 *
 	 * @global WP_Filesystem_Base $wp_filesystem Subclass
 	 */
@@ -634,7 +634,7 @@ class TG_Demo_Importer {
 		include_once dirname( __FILE__ ) . '/admin/class-demo-pack-upgrader.php';
 
 		$skin     = new WP_Ajax_Upgrader_Skin();
-		$upgrader = new TG_Demo_Pack_Upgrader( $skin );
+		$upgrader = new PK_Demo_Pack_Upgrader( $skin );
 		$template = strtolower( str_replace( '-pro', '', get_option( 'template' ) ) );
 		$packages = isset( $this->demo_packages->demos ) ? json_decode( wp_json_encode( $this->demo_packages->demos ), true ) : array();
 		$result   = $upgrader->install( "https://github.com/wppotter/potter-kit-demos/raw/master/packages/{$template}/{$slug}.zip" );
@@ -730,7 +730,7 @@ class TG_Demo_Importer {
 
 		// Import XML file demo content.
 		if ( is_file( $import_file ) ) {
-			$wp_import                    = new TG_WXR_Importer();
+			$wp_import                    = new PK_WXR_Importer();
 			$wp_import->fetch_attachments = true;
 
 			ob_start();
@@ -826,7 +826,7 @@ class TG_Demo_Importer {
 		$import_file = $this->get_import_file_path( 'dummy-customizer.dat' );
 
 		if ( is_file( $import_file ) ) {
-			$results = TG_Customizer_Importer::import( $import_file, $demo_id, $demo_data );
+			$results = PK_Customizer_Importer::import( $import_file, $demo_id, $demo_data );
 
 			if ( is_wp_error( $results ) ) {
 				return false;
@@ -851,7 +851,7 @@ class TG_Demo_Importer {
 		$import_file = $this->get_import_file_path( 'dummy-widgets.wie' );
 
 		if ( is_file( $import_file ) ) {
-			$results = TG_Widget_Importer::import( $import_file, $demo_id, $demo_data );
+			$results = PK_Widget_Importer::import( $import_file, $demo_id, $demo_data );
 
 			if ( is_wp_error( $results ) ) {
 				return false;
@@ -1145,7 +1145,7 @@ class TG_Demo_Importer {
 											// Format the value based on style key.
 											switch ( $style_key ) {
 												case 'background_image_attachment':
-													$attachment_id = tg_get_attachment_id( $style_value );
+													$attachment_id = pk_get_attachment_id( $style_value );
 
 													if ( 0 !== $attachment_id ) {
 														$grid_instance['style'][ $style_key ] = $attachment_id;
@@ -1273,4 +1273,4 @@ class TG_Demo_Importer {
 	}
 }
 
-new TG_Demo_Importer();
+new PK_Demo_Sites();

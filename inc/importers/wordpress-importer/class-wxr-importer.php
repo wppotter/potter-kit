@@ -24,9 +24,9 @@ define( 'IMPORT_DEBUG', false );
 require dirname( __FILE__ ) . '/class-wxr-parsers.php';
 
 /**
- * TG_WXR_Importer Class.
+ * PK_WXR_Importer Class.
  */
-class TG_WXR_Importer extends WP_Importer {
+class PK_WXR_Importer extends WP_Importer {
 	var $max_wxr_version = 1.2; // max. supported WXR version
 
 	var $id; // WXR attachment ID
@@ -1214,7 +1214,7 @@ class TG_WXR_Importer extends WP_Importer {
 	 * @return array Information gathered from the WXR file
 	 */
 	function parse( $file ) {
-		$parser = new TG_WXR_Parser();
+		$parser = new PK_WXR_Parser();
 		return $parser->parse( $file );
 	}
 
