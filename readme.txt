@@ -1,4 +1,4 @@
-=== Potter Kit ===
+=== Potter Kit - Elementor, Beaver Builder, Gutenberg Templates ===
 Contributors: wppotter
 Tags: potter kit, theme demos, demo, importer, one click import
 Requires at least: 4.7

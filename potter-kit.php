@@ -27,12 +27,6 @@ if ( ! class_exists( 'Potter_Kit' ) ) {
 	include_once dirname( __FILE__ ) . '/inc/class-potter-kit.php';
 }
 
-function potter_activation_redirect( $plugin ) {
-    if( $plugin == plugin_basename( __FILE__ ) ) {
-        exit( wp_redirect( admin_url( 'themes.php?page=demo-importer&browse=all' ) ) );
-    }
-}
-add_action( 'activated_plugin', 'potter_activation_redirect' );
 
 /**
  * Main instance of Potter Kit.
