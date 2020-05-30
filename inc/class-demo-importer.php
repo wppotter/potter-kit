@@ -117,9 +117,11 @@ class PK_Demo_Sites {
 	/**
 	 * Add menu item.
 	 */
-	public function admin_menu() {
+public function admin_menu() {
 		add_theme_page( __( 'Demo Sites', 'potter-kit' ), __( 'Demo Sites', 'potter-kit' ), 'switch_themes', 'demo-importer', array( $this, 'demo_importer' ) );
 	}
+
+
 
 	/**
 	 * Adds the class to the menu.
@@ -474,15 +476,6 @@ class PK_Demo_Sites {
 	 *
 	 * @return bool
 	 */
-	public function zakra_is_premium_theme_plan() {
-
-		if ( is_plugin_active( 'zakra-pro/zakra-pro.php' ) && is_plugin_active( 'companion-elementor/companion-elementor.php') ) {
-			return true;
-		}
-
-		return false;
-
-	}
 
 	/**
 	 * Ajax handler for getting demos from github.
@@ -554,7 +547,6 @@ class PK_Demo_Sites {
 					'name'            => $package_data->title,
 					'theme'           => $is_pro_theme_demo ? sprintf( esc_html__( '%s Pro', 'potter-kit' ), $available_packages->name ) : $available_packages->name,
 					'isPro'           => $is_pro_theme_demo ? false : isset( $package_data->isPro ),
-					'isPremium'       => $this->zakra_is_premium_theme_plan() ? false : isset( $package_data->isPremium ),
 					'active'          => $package_slug === $demo_activated_id,
 					'author'          => isset( $package_data->author ) ? $package_data->author : __( 'wppotter', 'potter-kit' ),
 					'version'         => isset( $package_data->version ) ? $package_data->version : $available_packages->version,

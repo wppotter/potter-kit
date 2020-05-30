@@ -1,0 +1,33 @@
+.footer-width-fixer {
+    width: 100%;
+}
+
+/* Container fix for genesis themes */
+
+.peb-template-genesis.peb-header .site-header .wrap,
+.peb-template-genesis.peb-footer .site-footer .wrap,
+.peb-template-generatepress.peb-header .site-header .inside-header {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Container fix for generatepress theme */
+
+.peb-template-generatepress.peb-header .site-header,
+.peb-template-generatepress.peb-footer .site-footer {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+    background-color: transparent !important; /* override generatepress default white color for header */
+}
+
+.bhf-hidden {
+    display: none
+}
+
+/* Fix: Header hidden below the page content */
+.peb-header #masthead {
+	z-index: 99;
+    position: relative;
+}

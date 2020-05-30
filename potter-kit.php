@@ -21,11 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! defined( 'WPPK_PLUGIN_FILE' ) ) {
 	define( 'WPPK_PLUGIN_FILE', __FILE__ );
 }
-
 // Include the main Potter Kit class.
 if ( ! class_exists( 'Potter_Kit' ) ) {
 	include_once dirname( __FILE__ ) . '/inc/class-potter-kit.php';
+	include_once dirname( __FILE__ ) . '/elementor-blocks/elementor-blocks.php';
 }
+
+
+
 
 
 /**
