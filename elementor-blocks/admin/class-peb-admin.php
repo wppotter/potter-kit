@@ -292,6 +292,7 @@ class PKEB_Admin {
 							<option value="" <?php selected( $template_type, '' ); ?>><?php _e( 'Select Location', 'potter-kit' ); ?></option>
 							<option value="type_before_header" <?php selected( $template_type, 'type_before_header' ); ?>><?php _e( 'Before Header', 'potter-kit' ); ?></option>
 							<option value="type_after_header" <?php selected( $template_type, 'type_after_header' ); ?>><?php _e( 'After Header', 'potter-kit' ); ?></option>
+							<option value="type_single_post_article_after" <?php selected( $template_type, 'type_single_post_article_after' ); ?>><?php _e( 'After Single Post Article', 'potter-kit' ); ?></option>
 							<option value="type_before_footer" <?php selected( $template_type, 'type_before_footer' ); ?>><?php _e( 'Before Footer', 'potter-kit' ); ?></option>
 							<option value="type_after_footer" <?php selected( $template_type, 'type_after_footer' ); ?>><?php _e( 'After Footer', 'potter-kit' ); ?></option>
 							<option value="custom_location" <?php selected( $template_type, 'custom_location' ); ?>><?php _e( 'Custom Location', 'potter-kit' ); ?></option>

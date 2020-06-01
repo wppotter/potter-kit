@@ -92,17 +92,23 @@ class Potter_Elementor_Blocks {
 			/* TO DO */
 			$class = 'notice notice-error is-dismissible elementor-blocks-notice';
 			/* translators: %s: html tags */
-			$message = sprintf( __( 'To Use %1$sElementor Blocks%2$s feature, %1$sElementor%2$s plugin needs to be installed & activated.', 'potter-kit' ), '<strong>', '</strong>' );
-
-			$plugin = 'elementor/elementor.php';
-				$button_label = __( 'Install and Active Elementor', 'potter-kit' );
+			$message = sprintf( __( '%1$sElementor Blocks%2$s is  a block building fetaure of Potter Kit. Using this feature you can create Block template with Elementor and publish them in non editable areas like above header and many more places. To use this feature you need to install and active %1$sElementor%2$s plugin.', 'potter-kit' ), '<strong>', '</strong>' );
+			$button_label = __( 'Read More', 'potter-kit' );
 
 
-			$button = '<p>' . $button_label . '</p><p></p>';
+			$button = '<p><a href="https://wppotter.com/potter-kit" target="_b lank">' . $button_label . '</a></p><p></p>';
 
-			printf( '<div class="%1$s"><p>%2$s</p>%3$s</div>', esc_attr( $class ), wp_kses_post( $message ), wp_kses_post( $button ) );
+			printf( '<div class="%1$s">
+		<svg width="86px" height="86px" viewBox="0 0 86 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <path d="M0,0 L86,0 L86,86 L0,86 L0,0 Z M54.8461538,50.1641791 L54.8461538,36.7910448 L56.8455798,36.7910448 C60.0109133,36.7910448 62.5769231,34.225035 62.5769231,31.0597015 C62.5769231,27.894368 60.0109133,25.3283582 56.8455798,25.3283582 L27,25.3283582 L27,11 L57.4179104,11 C68.2327999,11 77,19.7672001 77,30.5820896 C77,35.4497103 75.2239703,39.902517 72.284574,43.3278469 C75.2208963,46.6869501 77,51.0834703 77,55.8955224 C77,66.446634 68.446634,75 57.8955224,75 L27,75 L27,61.6268657 L56.8455798,61.6268657 C60.0109133,61.6268657 62.5769231,59.0608559 62.5769231,55.8955224 C62.5769231,52.7301889 60.0109133,50.1641791 56.8455798,50.1641791 L54.8461538,50.1641791 Z M52,50.1641791 L27,50.1641791 L27,43.4776119 L27,36.7910448 L52,36.7910448 L52,50.1641791 Z M9,11 L24,11 L24,75 L9,75 L9,11 Z" id="Combined-Shape" fill="#E0105F"></path>
+		    </g>
+		</svg>
+<div class="notice-content"><p>%2$s</p>%3$s</div></div>', esc_attr( $class ), wp_kses_post( $message ), wp_kses_post( $button ) );
 		}
 	}
+
+
 
 	/**
 	 * Loads the globally required files for the plugin.
@@ -190,6 +196,10 @@ class Potter_Elementor_Blocks {
 		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_peb_before_header_id() );
 	}
 
+	public static function get_single_post_article_after_content() {
+		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_peb_single_post_article_after_id() );
+	}
+
 	/**
 	 * Prints the Footer content.
 	 */
@@ -216,7 +226,7 @@ class Potter_Elementor_Blocks {
 	 * @return mixed.
 	 */
 	public static function get_settings( $setting = '', $default = '' ) {
-		if ( 'type_before_header' == $setting || 'type_after_header' == $setting || 'type_after_footer' == $setting || 'type_before_footer' == $setting ) {
+		if ( 'type_before_header' == $setting || 'type_after_header' == $setting || 'type_after_footer' == $setting || 'type_before_footer' == $setting || 'type_single_post_article_after' == $setting ) {
 			$templates = self::get_template_id( $setting );
 
 			$template = ! is_array( $templates ) ? $templates : $templates[0];

@@ -84,7 +84,7 @@ final class Potter_Kit
         $this->define('WPPK_ABSPATH', dirname(WPPK_PLUGIN_FILE) . '/');
         $this->define('WPPK_PLUGIN_BASENAME', plugin_basename(WPPK_PLUGIN_FILE));
         $this->define('WPPK_VERSION', $this->version);
-        $this->define('WPPK_DEMO_DIR', $upload_dir['basedir'] . '/tg-demo-pack/');
+        $this->define('WPPK_DEMO_DIR', $upload_dir['basedir'] . '/pk-demo-pack/');
     }
 
     /**
@@ -145,8 +145,8 @@ final class Potter_Kit
         include_once WPPK_ABSPATH . 'inc/functions-demo-importer.php';
 
         // Backward compatibility for demo packages config.
-        if (file_exists(WPPK_DEMO_DIR . 'tg-demo-config.php')) {
-            include_once WPPK_DEMO_DIR . 'tg-demo-config.php';
+        if (file_exists(WPPK_DEMO_DIR . 'pk-demo-config.php')) {
+            include_once WPPK_DEMO_DIR . 'pk-demo-config.php';
         }
     }
 

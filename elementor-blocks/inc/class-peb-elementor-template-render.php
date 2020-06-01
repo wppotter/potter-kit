@@ -42,6 +42,10 @@ class PKEB_Elementor_Template_Render {
 				add_action( 'potter_after_header', 'peb_render_after_header' );
 		}
 
+		if ( peb_single_post_article_after_enabled() ) {
+				add_action( 'potter_article_after', 'peb_render_single_post_article_after' );
+		}
+
 		if ( peb_after_footer_enabled() ) {
 				add_action( 'potter_after_footer', 'peb_render_after_footer' );
 		}

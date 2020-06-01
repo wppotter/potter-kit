@@ -20,6 +20,7 @@ function peb_before_header_enabled() {
 	}
 	return apply_filters( 'peb_before_header_enabled', $status );
 }
+
 function peb_after_header_enabled() {
 	$after_header_id = Potter_Elementor_Blocks::get_settings( 'type_after_header', '' );
 	$status    = false;
@@ -28,6 +29,16 @@ function peb_after_header_enabled() {
 		$status = true;
 	}
 	return apply_filters( 'peb_after_header_enabled', $status );
+}
+
+function peb_single_post_article_after_enabled() {
+	$single_post_article_after_id = Potter_Elementor_Blocks::get_settings( 'type_single_post_article_after', '' );
+	$status    = false;
+
+	if ( '' !== $single_post_article_after_id ) {
+		$status = true;
+	}
+	return apply_filters( 'peb_single_post_article_after_enabled', $status );
 }
 
 /**
@@ -72,6 +83,16 @@ function get_peb_after_header_id() {
 
 	return apply_filters( 'get_peb_after_header_id', $before_header_id );
 }
+
+function get_peb_single_post_article_after_id() {
+	$single_post_article_after_id = Potter_Elementor_Blocks::get_settings( 'type_single_post_article_after', '' );
+
+	if ( '' === $single_post_article_after_id ) {
+		$single_post_article_after_id = false;
+	}
+
+	return apply_filters( 'get_peb_single_post_article_after_id', $single_post_article_after_id );
+}
 /**
  * Get PEB Footer ID
  *
@@ -105,6 +126,15 @@ function peb_render_before_header() {
 	}
 
 		 Potter_Elementor_Blocks::get_before_header_content();
+
+}
+
+function peb_render_single_post_article_after() {
+	if ( false == apply_filters( 'enable_peb_single_post_article_after', true ) ) {
+		return;
+	}
+
+		 Potter_Elementor_Blocks::get_single_post_article_after_content();
 
 }
 

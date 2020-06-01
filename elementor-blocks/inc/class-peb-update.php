@@ -84,6 +84,7 @@ if ( ! class_exists( 'PKEB_Update' ) ) {
 			$after_header_id        = $this->get_legacy_template_id( 'type_after_header' );
 			$before_header_id        = $this->get_legacy_template_id( 'type_before_header' );
 			$after_footer_id        = $this->get_legacy_template_id( 'type_after_footer' );
+			$single_post_article_after_id        = $this->get_legacy_template_id( 'type_single_post_article_after' );
 			$before_footer_id = $this->get_legacy_template_id( 'type_before_footer' );
 
 			// Header.
@@ -92,6 +93,10 @@ if ( ! class_exists( 'PKEB_Update' ) ) {
 			}
 			if ( ! empty( $after_header_id ) ) {
 				update_post_meta( $after_header_id, 'peb_target_include_locations', $default_include_locations );
+			}
+
+			if ( ! empty( $single_post_article_after_id ) ) {
+				update_post_meta( $single_post_article_after_id, 'peb_target_include_locations', $default_include_locations );
 			}
 
 			// Footer.

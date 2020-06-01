@@ -165,15 +165,15 @@ public function admin_menu() {
 		// Register admin scripts.
 		wp_register_script( 'jquery-tiptip', $assets_path . 'js/jquery-tiptip/jquery.tipTip' . $suffix . '.js', array( 'jquery' ), '1.3', true );
 		wp_register_script( 'jquery-confirm', $assets_path . 'js/jquery-confirm/jquery-confirm' . $suffix . '.js', array( 'jquery' ), WPPK_VERSION, true );
-		wp_register_script( 'tg-demo-updates', $assets_path . 'js/admin/demo-updates' . $suffix . '.js', array( 'jquery', 'updates' ), WPPK_VERSION, true );
-		wp_register_script( 'wp-pk', $assets_path . 'js/admin/demo-importer' . $suffix . '.js', array( 'jquery', 'jquery-tiptip', 'wp-backbone', 'wp-a11y', 'tg-demo-updates', 'jquery-confirm' ), WPPK_VERSION, true );
+		wp_register_script( 'pk-demo-updates', $assets_path . 'js/admin/demo-updates' . $suffix . '.js', array( 'jquery', 'updates' ), WPPK_VERSION, true );
+		wp_register_script( 'wp-pk', $assets_path . 'js/admin/demo-importer' . $suffix . '.js', array( 'jquery', 'jquery-tiptip', 'wp-backbone', 'wp-a11y', 'pk-demo-updates', 'jquery-confirm' ), WPPK_VERSION, true );
 
 		// Demo Importer appearance page.
 		if ( 'appearance_page_demo-importer' === $screen_id ) {
 			wp_enqueue_style( 'wp-pk' );
 			wp_enqueue_script( 'wp-pk' );
 			wp_localize_script(
-				'tg-demo-updates',
+				'pk-demo-updates',
 				'_demoUpdatesSettings',
 				array(
 					'l10n' => array(
