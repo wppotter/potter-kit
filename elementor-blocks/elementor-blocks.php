@@ -4,7 +4,7 @@
  * @package         potter-elementor-blocks
  */
 
-define( 'PKEB_VER', '1.5.0' );
+define( 'PKEB_VER', '1.0.5' );
 define( 'PKEB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PKEB_URL', plugins_url( '/', __FILE__ ) );
 define( 'PKEB_PATH', plugin_basename( __FILE__ ) );

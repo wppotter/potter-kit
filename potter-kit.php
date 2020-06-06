@@ -3,7 +3,7 @@
  * Plugin Name: Potter Kit - Elementor, Beaver Builder, Gutenberg Templates
  * Plugin URI: https://wppotter.com/potter-kit/
  * Description: Import Potter themes demo content, widgets and theme settings with just one click.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: wppotter
  * Author URI: https://wppotter.com
  * License: GPLv3 or later

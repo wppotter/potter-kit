@@ -1,6 +1,6 @@
-=== Potter Kit - Elementor, Beaver Builder, Gutenberg Templates ===
+=== Potter Kit - Elementor, Beaver Builder, Gutenberg Templates and Elementor Blocks Builder ===
 Contributors: wppotter
-Tags: potter kit, theme demos, demo, importer, one click import
+Tags: potter kit, theme demos, demo, importer, one click import, Block Builder
 Requires at least: 4.7
 Tested up to: 5.4
 Stable tag: 1.6.3
@@ -8,10 +8,34 @@ License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Import Potter themes demo content, widgets and theme settings with just one click.
+Create and publish Elementor Blocks in defind places of the website.
 
 == Description ==
 
 Import <a href="https://pottertheme.com" target="_blank" rel="nofollow">Potter Theme</a> official themes demo content, widgets and theme settings with just one click.
+
+<b>New Feature: </b> Create and publish Elementor Blocks in the defined places of the website.
+
+Elementor Blocks is a simple yet powerful feature plugin that allows you to create a layout with Elementor and set it as
+
+* Before header
+* After header
+* Before Footer
+* After footer
+* After Post content
+* Custom Position (Place any where Via short code)
+
+This is a simple custom post type with option to publish the Elementor Content in specific places and spacific pages of your choice.
+
+= Pick Display Locations =
+
+Want to display a custom block template only on the homepage or on the blog archive page or on the entire website? Well, this feature allows choosing a specific target location to display the block.
+
+= Add Elementor Blocks Anywhere =
+
+Apart from the defined locations, you can design custom templates with Elementor and set it at any place on the website with a shortcode.
+
+
 
 Get [free support](https://pottertheme.com/support/)
 
@@ -70,5 +94,10 @@ Yes you can! Join in on our [GitHub repository](https://github.com/wppotter/pott
 3. Finally, Import the Demo with just one click.
 
 == Changelog ==
+= 1.0.5 - 06-06-2020 =
+* Plogin Updated with new features.
+* Various bug Fixes
+* Elementor Blocks feature added
+
 = 1.0.4 - 14-04-2020 =
-* Plogun Updated with new features.
+* Plogin Updated with new features.

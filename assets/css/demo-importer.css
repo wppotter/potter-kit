@@ -15,9 +15,13 @@
 .appearance_page_demo-importer .demo-importer .wp-filter {
   padding: 0 20px 0px 0px;
   border-radius: 3px;
-  position: sticky;
-  top: 32px;
+  position: fixed;
+  top: 20px;
   z-index: 9;
+  max-width: 100%;
+  width: auto;
+  right: 0px;
+  left: 160px;
 }
 
 .appearance_page_demo-importer .demo-importer .wp-filter .search-form {
@@ -44,6 +48,7 @@
 .filter-links li>a {
   font-size: 16px;
   font-weight: 300;
+  padding: 20px 0px;
 }
 
 .appearance_page_demo-importer .demo-importer .theme-browser .theme .premium-demo-banner {
@@ -59,8 +64,7 @@
   text-transform: uppercase
 }
 .theme-browser {
-  padding: 30px;
-  background: #fff;
+  padding: 30px 0px 30px 0px;
   border-radius: 5px;
 }
 .appearance_page_demo-importer .demo-importer .theme-browser .theme .premium-demo-banner::after, .appearance_page_demo-importer .demo-importer .theme-browser .theme .premium-demo-banner::before {
@@ -85,6 +89,8 @@
 
 .theme-browser .theme {
   transition: .5s;
+  padding: 10px;
+  background: #fff;
 }
 .theme-browser .theme:hover {
   transform: translateX(3px);
@@ -338,8 +344,19 @@ body.demo-import-message-popup {
 }
 
 .admin-heading-content {
-  padding: 00px 0px 20px 0px;
+  padding: 80px 0px 20px 0px;
 }
+
+.admin-heading-content .content-part {
+  max-width: 50%;
+  float: left;
+}
+.admin-heading-content .message-part {
+  max-width: 40%;
+  float: right;
+}
+
+
 .admin-heading-content h1 {
   font-weight: 200;
   font-size: 40px;
@@ -357,15 +374,18 @@ body.demo-import-message-popup {
   font-weight: 200;
 }
 .potter-kit-message {
+  clear: both;
+  margin-top: 30px;
 }
 .updated.potter-kit-message {
   border-radius: 3px;
-  background: #FFECCD;
-  padding: 10px 20px;
+  background: #fff;
+  padding: 5px 20px;
 }
 .updated.potter-kit-message p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
+  display: inline-block;
 }
 .jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
   max-width: 30%;
@@ -377,10 +397,8 @@ body.demo-import-message-popup {
 }
 .elementor-blocks-notice {
   padding: 0px !important;
-  border-radius: 5px;
-  border: 0px;
   margin: 20px auto 20px auto !important;
-  background: #E0105F;
+  background: #fff;
 }
 
 .elementor-blocks-notice svg {
@@ -396,21 +414,22 @@ body.demo-import-message-popup {
   display: inline-block;
   padding: 0px;;
   vertical-align: middle;
-  color: #fff;
+  color: #000;
 }
 .elementor-blocks-notice .notice-content p {
-  font-size: 16px;
-  font-weight: 200;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 30px;
+}
+.elementor-blocks-notice .notice-content p:first-child {
+  max-width: 70%;
 }
 .elementor-blocks-notice .notice-content p a {
-  background: #fff;
-  padding: 10px 20px;
   display: inline-block;
-  color: #E0105F;
-  text-decoration: none;
-  border-radius: 5px;
+
 }
 .elementor-blocks-notice .notice-dismiss:before {
-  font-size: 25px;
-  color: #fff;
+  font-size: 18px;
+  color: #666;
 }

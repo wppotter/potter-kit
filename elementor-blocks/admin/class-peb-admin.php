@@ -230,17 +230,8 @@ class PKEB_Admin {
 	 *         Moved the menu under Appearance -> Elementor Blocks Builder
 	 */
 	public function register_admin_menu() {
-		add_menu_page(
-			__( 'Potter Kit', 'potter-kit' ),
-			__( 'Potter Kit', 'potter-kit' ),
-			'switch_themes',
-			'potter-kit',
-			array( $this, 'potter_kit_display' ),
-			plugins_url( 'potter-kit/elementor-blocks/assets/image/potter.svg' )
-		 );
+		add_theme_page(
 
-		add_submenu_page(
-			'potter-kit',
 			__( 'Elementor Blocks', 'potter-kit' ),
 			__( 'Elementor Blocks', 'potter-kit' ),
 			'edit_pages',
