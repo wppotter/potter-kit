@@ -48,7 +48,7 @@ function peb_single_post_article_after_enabled() {
  * @return bool True if header is enabled. False if header is not enabled.
  */
 function peb_after_footer_enabled() {
-	$footer_id = Potter_Elementor_Blocks::get_settings( 'type_after_footer', '' );
+	$after_footer_id = Potter_Elementor_Blocks::get_settings( 'type_after_footer', '' );
 	$status    = false;
 
 	if ( '' !== $after_footer_id ) {

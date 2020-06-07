@@ -230,13 +230,15 @@ class PKEB_Admin {
 	 *         Moved the menu under Appearance -> Elementor Blocks Builder
 	 */
 	public function register_admin_menu() {
+		$theme = wp_get_theme();
+		if ( 'Potter' == $theme->name || 'Potter' == $theme->parent_theme ) {
 		add_theme_page(
-
 			__( 'Elementor Blocks', 'potter-kit' ),
 			__( 'Elementor Blocks', 'potter-kit' ),
 			'edit_pages',
 			'edit.php?post_type=elementor-pb'
 		);
+		}
 	}
 
 

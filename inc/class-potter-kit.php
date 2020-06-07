@@ -120,9 +120,11 @@ final class Potter_Kit
 
             add_filter('plugin_action_links_' . WPPK_PLUGIN_BASENAME, array( $this, 'plugin_action_links' ));
             add_filter('plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2);
+
         } else {
             add_action('admin_notices', array( $this, 'theme_support_missing_notice' ));
         }
+
     }
 
     /**
@@ -134,6 +136,7 @@ final class Potter_Kit
     {
         $core_themes = array( 'potter' );
         return array_merge($core_themes);
+        
     }
 
     /**
