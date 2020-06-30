@@ -100,7 +100,7 @@ class Potter_Elementor_Blocks {
 
 			printf( '<div class="%1$s">
 
-	<svg width="362px" height="362px" viewBox="0 0 126 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg width="40px"  viewBox="0 0 126 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 		<g id="Group-4" transform="translate(-10.000000, -5.000000)" fill="#E01072">
 				<path d="M45.7510204,0.809316237 L47.5119511,0.895754094 C54.9756921,1.26212272 60.9386735,7.24078947 61.2854337,14.7054671 L66.0933247,118.20454 C66.4413137,125.695669 60.6506546,132.050529 53.1595258,132.398518 C52.7278083,132.418573 52.2953796,132.418005 51.8637163,132.396816 L50.1027856,132.310378 C42.6390446,131.94401 36.6760632,125.965343 36.329303,118.500665 L31.521412,15.0015926 C31.173423,7.5104637 36.9640821,1.15560312 44.4552109,0.807614195 C44.8869284,0.787559422 45.3193571,0.788127416 45.7510204,0.809316237 Z" id="Rectangle" transform="translate(48.807368, 66.603066) rotate(30.000000) translate(-48.807368, -66.603066) "></path>

@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 <div class="wrap demo-importer">
 	<div class="wp-filter hide-if-no-js">
 		<div class="filter-section">
-		<svg width="36px" viewBox="0 0 152 193" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:inline-block; margin: 0px 10px 0px 20px; vertical-align: middle;">
+		<svg width="25px" viewBox="0 0 152 193" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:inline-block; margin: 0px 5px 0px 20px; vertical-align: middle;">
 	<g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 			<g id="Group-128-Copy">
 					<path d="M71.9769977,138 C71.9765244,168.689318 71.9762877,184.033977 71.9762877,184.033977 C71.9762877,184.033977 70.5033217,189.395508 65.137403,191 C59.7714844,192.604492 49,192.604492 37.0898437,192.604492 C25.1796875,192.604492 2.83841374,190.090823 0.0900156481,170.708267 C0.0900156481,170.708267 -4.18592558,140.120546 46.2033387,138 L71.9769977,138 Z" id="Fill-4" fill="#0F89FF"></path>

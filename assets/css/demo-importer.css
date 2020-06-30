@@ -46,11 +46,22 @@
   box-shadow: none
 }
 .filter-links li>a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
-  padding: 20px 0px;
+  padding: 15px 10px;
+  margin: 0px;
+  text-transform: uppercase;
 }
-
+.filter-links .current {
+  background: #007cba;
+  color: #fff !important;
+  border-bottom-color: #000 !important;
+}
+.wrap.demo-importer{
+  max-width: 1400px;
+  float: none;
+  margin: auto;
+}
 .appearance_page_demo-importer .demo-importer .theme-browser .theme .premium-demo-banner {
   position: absolute;
   top: 15px;
@@ -399,6 +410,7 @@ body.demo-import-message-popup {
   padding: 0px !important;
   margin: 20px auto 20px auto !important;
   background: #fff;
+  border-radius: 5px;
 }
 
 .elementor-blocks-notice svg {
