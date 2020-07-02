@@ -64,7 +64,7 @@ li#toplevel_page_Settings-page {
     display: none;
 }
 
-.wp-admin #adminmenu .wp-submenu a[href="themes.php?page=peb-settings"] {
+.wp-admin #adminmenu .wp-submenu a[href="admin.php?page=peb-settings"] {
     display:none;
 }
 

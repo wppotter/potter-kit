@@ -248,7 +248,7 @@ final class Potter_Kit
     public function plugin_action_links($actions)
     {
         $new_actions = array(
-            'importer' => '<a href="' . admin_url('themes.php?page=demo-importer') . '" aria-label="' . esc_attr(__('View Demo Importer', 'potter-kit')) . '">' . __('Demo Sites', 'potter-kit') . '</a>',
+            'importer' => '<a href="' . admin_url('admin.php?page=demo-importer') . '" aria-label="' . esc_attr(__('View Demo Importer', 'potter-kit')) . '">' . __('Demo Sites', 'potter-kit') . '</a>',
         );
 
         return array_merge($new_actions, $actions);
@@ -280,7 +280,7 @@ final class Potter_Kit
      */
     public function theme_support_missing_notice()
     {
-        $themes_url = array_intersect(array_keys(wp_get_themes()), $this->get_core_supported_themes()) ? admin_url('themes.php?search=potter') : admin_url('theme-install.php?search=potter');
+        $themes_url = array_intersect(array_keys(wp_get_themes()), $this->get_core_supported_themes()) ? admin_url('admin.php?search=potter') : admin_url('theme-install.php?search=potter');
 
         /* translators: %s: Potter Theme URL */
         echo '<div class="error notice is-dismissible"><p style="font-size: 16px;">

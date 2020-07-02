@@ -29,7 +29,7 @@ class PK_Demo_Sites {
 
 		// Add Demo Importer menu.
 		if ( apply_filters( 'wppotter_show_demo_importer_page', true ) ) {
-			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
+			add_action( 'admin_menu', array( $this, 'register_admin_menu'), 20 );
 			add_action( 'admin_head', array( $this, 'add_menu_classes' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
@@ -115,10 +115,38 @@ class PK_Demo_Sites {
 	}
 
 	/**
-	 * Add menu item.
+	 * Register admin menu.
+	 *
+	 * Add new Elementor Settings admin menu.
+	 *
+	 * Fired by `admin_menu` action.
+	 *
+	 * @since 1.0.0
+	 * @access public
 	 */
-public function admin_menu() {
-		add_theme_page( __( 'Demo Sites', 'potter-kit' ), __( 'Demo Sites', 'potter-kit' ), 'switch_themes', 'demo-importer', array( $this, 'demo_importer' ) );
+	public function register_admin_menu() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		add_menu_page(
+			__( 'Potter Kit', 'potter-kit' ),
+			__( 'Potter Kit', 'potter-kit' ),
+			'switch_themes',
+			'potter-kit',
+			array( $this, 'potter_kit' ),
+			'',
+			'50'
+		);
+		add_submenu_page(
+			'potter-kit',
+			__( 'Potter Kit', 'potter-kit' ),
+			__( 'Potter Kit', 'potter-kit' ),
+			'switch_themes',
+			'demo-importer',
+			array( $this, 'demo_importer' )
+		);
 	}
 
 
@@ -129,14 +157,14 @@ public function admin_menu() {
 	public function add_menu_classes() {
 		global $submenu;
 
-		if ( isset( $submenu['themes.php'] ) ) {
+		if ( isset( $submenu['admin.php'] ) ) {
 			$submenu_class = 'demo-importer hide-if-no-js';
 
 			// Add menu classes if user has access.
 			if ( apply_filters( 'potter_kit_importer_include_class_in_menu', true ) ) {
-				foreach ( $submenu['themes.php'] as $order => $menu_item ) {
+				foreach ( $submenu['admin.php'] as $order => $menu_item ) {
 					if ( 0 === strpos( $menu_item[0], _x( 'Demo Sites', 'Admin menu name', 'potter-kit' ) ) ) {
-						$submenu['themes.php'][ $order ][4] = empty( $menu_item[4] ) ? $submenu_class : $menu_item[4] . ' ' . $submenu_class;
+						$submenu['admin.php'][ $order ][4] = empty( $menu_item[4] ) ? $submenu_class : $menu_item[4] . ' ' . $submenu_class;
 						break;
 					}
 				}
@@ -169,7 +197,7 @@ public function admin_menu() {
 		wp_register_script( 'wp-pk', $assets_path . 'js/admin/demo-importer' . $suffix . '.js', array( 'jquery', 'jquery-tiptip', 'wp-backbone', 'wp-a11y', 'pk-demo-updates', 'jquery-confirm' ), WPPK_VERSION, true );
 
 		// Demo Importer appearance page.
-		if ( 'appearance_page_demo-importer' === $screen_id ) {
+		if ( 'potter-kit_page_demo-importer' === $screen_id ) {
 			wp_enqueue_style( 'wp-pk' );
 			wp_enqueue_script( 'wp-pk' );
 			wp_localize_script(
@@ -255,7 +283,7 @@ public function admin_menu() {
 		$current_screen = get_current_screen();
 
 		// Check to make sure we're on a Potter Kit admin page.
-		if ( isset( $current_screen->id ) && apply_filters( 'potter_kit_importer_display_admin_footer_text', in_array( $current_screen->id, array( 'appearance_page_demo-importer' ) ) ) ) {
+		if ( isset( $current_screen->id ) && apply_filters( 'potter_kit_importer_display_admin_footer_text', in_array( $current_screen->id, array( 'potter-kit_page_demo-importer' ) ) ) ) {
 			// Change the footer text.
 			if ( ! get_option( 'potter_kit_importer_admin_footer_text_rated' ) ) {
 				$footer_text = sprintf(
@@ -278,12 +306,12 @@ public function admin_menu() {
 	public function add_help_tabs() {
 		$screen    = get_current_screen();
 		$reset_url = wp_nonce_url(
-			add_query_arg( 'do_reset_wordpress', 'true', admin_url( 'themes.php?page=demo-importer' ) ),
+			add_query_arg( 'do_reset_wordpress', 'true', admin_url( 'admin.php?page=demo-importer' ) ),
 			'potter_kit_importer_reset',
 			'potter_kit_importer_reset_nonce'
 		);
 
-		if ( ! $screen || ! in_array( $screen->id, array( 'appearance_page_demo-importer' ) ) ) {
+		if ( ! $screen || ! in_array( $screen->id, array( 'potter-kit_page_demo-importer' ) ) ) {
 			return;
 		}
 
@@ -344,7 +372,7 @@ public function admin_menu() {
 		$demo_activated_id   = get_option( 'potter_kit_importer_activated_id' );
 		$demo_notice_dismiss = get_option( 'potter_kit_importer_reset_notice' );
 
-		if ( ! $screen || ! in_array( $screen->id, array( 'appearance_page_demo-importer' ) ) ) {
+		if ( ! $screen || ! in_array( $screen->id, array( 'potter-kit_page_demo-importer' ) ) ) {
 			return;
 		}
 
@@ -459,9 +487,16 @@ public function admin_menu() {
 			wp_set_auth_cookie( $result['user_id'] );
 
 			// Redirect to demo importer page to display reset success notice.
-			wp_safe_redirect( admin_url( 'themes.php?page=demo-importer&browse=all&reset=true' ) );
+			wp_safe_redirect( admin_url( 'admin.php?page=demo-importer&browse=all&reset=true' ) );
 			exit();
 		}
+	}
+
+	/**
+	 * Demo Importer page output.
+	 */
+	public function potter_kit() {
+		_e( 'Welcom Screen', 'elementor' );
 	}
 
 	/**

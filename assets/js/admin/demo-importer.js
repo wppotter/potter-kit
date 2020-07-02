@@ -1155,14 +1155,14 @@ function navigateRouter( url, state ) {
 demos.Router = Backbone.Router.extend({
 
 	routes: {
-		'themes.php?page=demo-importer&demo=:slug': 'preview',
-		'themes.php?page=demo-importer&browse=:sort': 'sort',
-		'themes.php?page=demo-importer&search=:query': 'search',
-		'themes.php?page=demo-importer': 'sort'
+		'admin.php?page=demo-importer&demo=:slug': 'preview',
+		'admin.php?page=demo-importer&browse=:sort': 'sort',
+		'admin.php?page=demo-importer&search=:query': 'search',
+		'admin.php?page=demo-importer': 'sort'
 	},
 
 	baseUrl: function( url ) {
-		return 'themes.php?page=demo-importer' + url;
+		return 'admin.php?page=demo-importer' + url;
 	},
 
 	demoPath: '&demo=',
