@@ -136,8 +136,16 @@ class PK_Demo_Sites {
 			'switch_themes',
 			'potter-kit',
 			array( $this, 'potter_kit' ),
-			'',
-			'50'
+			plugins_url( 'potter-kit/images/potter-kit.svg' ),
+			'90'
+		);
+		add_submenu_page(
+			'potter-kit',
+			__( 'Settings', 'potter-kit' ),
+			__( 'Settings', 'potter-kit' ),
+			'switch_themes',
+			'potter-kit',
+			array( $this, 'potter_kit' )
 		);
 		add_submenu_page(
 			'potter-kit',
@@ -305,64 +313,6 @@ class PK_Demo_Sites {
 	 * Add Contextual help tabs.
 	 */
 	public function add_help_tabs() {
-		$screen    = get_current_screen();
-		$reset_url = wp_nonce_url(
-			add_query_arg( 'do_reset_wordpress', 'true', admin_url( 'admin.php?page=demo-importer' ) ),
-			'potter_kit_importer_reset',
-			'potter_kit_importer_reset_nonce'
-		);
-
-		if ( ! $screen || ! in_array( $screen->id, array( 'potter-kit_page_demo-importer' ) ) ) {
-			return;
-		}
-
-		$screen->add_help_tab(
-			array(
-				'id'      => 'potter_kit_importer_support_tab',
-				'title'   => __( 'Help &amp; Support', 'potter-kit' ),
-				'content' =>
-					'<h2>' . __( 'Help &amp; Support', 'potter-kit' ) . '</h2>' .
-				'<p>' . sprintf(
-					__( 'Should you need help understanding, using, or extending Potter Kit, <a href="%s">please read our documentation</a>. You will find all kinds of resources including snippets, tutorials and much more.', 'potter-kit' ),
-					'https://wppotter.com/potter-kit/docs/'
-				) . '</p>' .
-				'<p>' . sprintf(
-					__( 'For further assistance with Potter Kit core you can use the <a href="%1$s">community forum</a>.', 'potter-kit' ),
-					'https://wordpress.org/support/plugin/potter-kit'
-				) . '</p>' .
-					'<p><a href="' . 'https://wordpress.org/support/plugin/potter-kit' . '" class="button button-primary">' . __( 'Community forum', 'potter-kit' ) . '</a> <a href="' . 'https://pottertheme.com/support/' . '" class="button">' . __( 'Potter Kit Support', 'potter-kit' ) . '</a></p>',
-			)
-		);
-
-		$screen->add_help_tab(
-			array(
-				'id'      => 'potter_kit_importer_bugs_tab',
-				'title'   => __( 'Found a bug?', 'potter-kit' ),
-				'content' =>
-					'<h2>' . __( 'Found a bug?', 'potter-kit' ) . '</h2>' .
-					'<p>' . sprintf( __( 'If you find a bug within Potter Kit you can create a ticket via <a href="%1$s">Github issues</a>.', 'potter-kit' ), 'https://github.com/wppotter/potter-kit/issues?state=open' ) . '</p>' .
-					'<p><a href="' . 'https://github.com/wppotter/potter-kit/issues?state=open' . '" class="button button-primary">' . __( 'Report a bug', 'potter-kit' ) . '</a></p>',
-			)
-		);
-
-		$screen->add_help_tab(
-			array(
-				'id'      => 'potter_kit_importer_reset_tab',
-				'title'   => __( 'Reset wizard', 'potter-kit' ),
-				'content' =>
-					'<h2>' . __( 'Reset wizard', 'potter-kit' ) . '</h2>' .
-					'<p>' . __( 'If you need to reset the WordPress back to default again, please click on the button below.', 'potter-kit' ) . '</p>' .
-					'<p><a href="' . esc_url( $reset_url ) . '" class="button button-primary wppotter-reset-wordpress">' . __( 'Reset wizard', 'potter-kit' ) . '</a></p>',
-			)
-		);
-
-		$screen->set_help_sidebar(
-			'<p><strong>' . __( 'For more information:', 'potter-kit' ) . '</strong></p>' .
-			'<p><a href="' . 'https://wppotter.com/potter-kit/' . '" target="_blank">' . __( 'About Demo Importer', 'potter-kit' ) . '</a></p>' .
-			'<p><a href="' . 'https://wordpress.org/plugins/potter-kit/' . '" target="_blank">' . __( 'WordPress.org project', 'potter-kit' ) . '</a></p>' .
-			'<p><a href="' . 'https://github.com/wppotter/potter-kit' . '" target="_blank">' . __( 'Github project', 'potter-kit' ) . '</a></p>' .
-			'<p><a href="' . 'https://pottertheme.com/' . '" target="_blank">' . __( 'Official themes', 'potter-kit' ) . '</a></p>'
-		);
 	}
 
 	/**
@@ -497,7 +447,7 @@ class PK_Demo_Sites {
 	 * Demo Importer page output.
 	 */
 	public function potter_kit() {
-		_e( 'Welcom Screen', 'elementor' );
+		_e( 'Welcom Screen', 'potter-kit' );
 	}
 
 	/**
