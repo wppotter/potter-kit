@@ -205,7 +205,6 @@ class PK_Demo_Sites {
 		wp_register_script( 'wp-pk', $assets_path . 'js/admin/demo-importer' . $suffix . '.js', array( 'jquery', 'jquery-tiptip', 'wp-backbone', 'wp-a11y', 'pk-demo-updates', 'jquery-confirm' ), WPPK_VERSION, true );
 
 		// Demo Importer appearance page.
-		//print_r($screen_id); die;
 		if ( 'potter-kit_page_demo-importer' === $screen_id ) {
 			wp_enqueue_style( 'wp-pk' );
 			wp_enqueue_script( 'wp-pk' );
