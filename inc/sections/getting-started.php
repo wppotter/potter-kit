@@ -12,7 +12,6 @@
 			<h3><?php esc_html_e( 'Getting Started With Online Generator', 'potter-kit' ); ?></h3>
 			<p><?php esc_html_e( 'The fastest way to getting started with Meta Box is use our online generator to generate meta boxes with custom fields. It provides a friendly UI for you to create meta boxes and custom fields just by drag and drop fields.', 'potter-kit' ); ?><p>
 
-			<a target="_blank" class="screenshot" href="https://metabox.io/online-generator/?utm_source=WordPress&utm_medium=link&utm_campaign=plugin"><img src="<?php echo esc_url( RWMB_URL . 'inc/about/images/online-generator.png' ); ?>" alt="<?php esc_attr_e( 'online generator', 'potter-kit' ); ?>"></a>
 
 			<p><a class="button" target="_blank" href="<?php echo esc_url( 'https://metabox.io/online-generator/?utm_source=WordPress&utm_medium=link&utm_campaign=plugin' ); ?>"><?php esc_html_e( 'Go to Online Generator', 'potter-kit' ); ?></a></p>
 		</div>
