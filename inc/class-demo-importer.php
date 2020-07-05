@@ -130,7 +130,7 @@ class PK_Demo_Sites {
 			return;
 		}
 
-		add_menu_page(
+		$about = add_menu_page(
 			__( 'Potter Kit', 'potter-kit' ),
 			__( 'Potter Kit', 'potter-kit' ),
 			'switch_themes',
@@ -155,8 +155,19 @@ class PK_Demo_Sites {
 			'demo-importer',
 			array( $this, 'demo_importer' )
 		);
+		add_action( "load-$about", array( $this, 'load_about' ) );
 	}
 
+	/**
+	 * Enqueue CSS and JS.
+	 */
+	public function load_about() {
+		$suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$assets_path = wppk()->plugin_url() . '/assets/';
+
+		wp_enqueue_style( 'pk-about', $assets_path . 'css/admin/about' . $suffix . '.css', array(), WPPK_VERSION );
+		wp_enqueue_script( 'pk-about', $assets_path . 'js/admin/about' . $suffix . '.js', array( 'jquery' ), WPPK_VERSION, true );
+	}
 
 
 	/**
@@ -443,10 +454,37 @@ class PK_Demo_Sites {
 	}
 
 	/**
-	 * Demo Importer page output.
+	 * Render admin page.
 	 */
 	public function potter_kit() {
-		_e( 'Welcom Screen', 'potter-kit' );
+		?>
+		<div class="wrap">
+			<div id="poststuff">
+				<div id="post-body" class="metabox-holder columns-2">
+					<div id="post-body-content">
+						<div class="about-wrap">
+							<?php
+							include __DIR__ . '/sections/welcome.php';
+							include __DIR__ . '/sections/tabs.php';
+							include __DIR__ . '/sections/getting-started.php';
+							include __DIR__ . '/sections/extensions.php';
+							include __DIR__ . '/sections/support.php';
+							do_action( 'potter_kit_tabs_content' );
+							?>
+						</div>
+					</div>
+					<div id="postbox-container-1" class="postbox-container">
+						<?php
+						include __DIR__ . '/sections/newsletter.php';
+						//if ( ! $this->update_checker->has_extensions() ) {
+							include __DIR__ . '/sections/upgrade.php';
+						//}
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 
 	/**
